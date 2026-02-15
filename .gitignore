@@ -1,0 +1,9 @@
+# Ejecutables
+phase1
+*.out
+
+# Archivos de texto generados
+*.txt
+
+# Archivos de macOS
+.DS_Store
