@@ -1,5 +1,6 @@
 # Ejecutables
 phase1
+phase2
 *.out
 
 # Archivos de texto generados
