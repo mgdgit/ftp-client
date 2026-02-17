@@ -23,9 +23,9 @@ CC = gcc
 # Las rutas cambian según el sistema operativo:
 #
 # ┌─────────────────────────────────────────────────────────────────────────────────┐
-# │ macOS (Apple Silicon: M1, M2, M3, M4, etc.) — Instalado con Homebrew          │
-# │   -I/opt/homebrew/opt/openssl@3/include                                        │
-# │   -L/opt/homebrew/opt/openssl@3/lib                                            │
+# │ macOS (Apple Silicon: M1, M2, M3, M4, etc.) — Instalado con Homebrew            │
+# │   -I/opt/homebrew/opt/openssl@3/include                                         │
+# │   -L/opt/homebrew/opt/openssl@3/lib                                             │
 # │                                                                                 │
 # │ macOS (Intel) — Instalado con Homebrew                                          │
 # │   -I/usr/local/opt/openssl@3/include                                            │
@@ -36,7 +36,7 @@ CC = gcc
 # │   Si no está instalado: sudo apt install libssl-dev                             │
 # │                                                                                 │
 # │ Windows (con MSYS2/MinGW)                                                       │
-# │   Instalar: pacman -S mingw-w64-x86_64-openssl                                 │
+# │   Instalar: pacman -S mingw-w64-x86_64-openssl                                  │
 # │   -IC:/msys64/mingw64/include                                                   │
 # │   -LC:/msys64/mingw64/lib                                                       │
 # │                                                                                 │
