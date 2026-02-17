@@ -2,6 +2,7 @@
 phase1
 phase2
 phase3
+main
 *.out
 
 # Archivos de texto generados
