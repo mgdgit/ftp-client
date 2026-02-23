@@ -1,38 +1,55 @@
-# FTP Client
+# FTP Client (C)
 
-Brief description of what this project does.
+A C-based FTP client project that evolves in 3 phases and ends with an FTPS (FTP over TLS) implementation.
 
-## What It Does
-- Point 1
-- Point 2
-- Point 3
+- `phases/phase1.c`: Basic TFTP-style file download over UDP (port 69).
+- `phases/phase2.c`: Plain FTP control/data channels over TCP (port 21 + PASV data port).
+- `phases/phase3.c`: FTPS with TLS on control and data channels.
+- `main.c`: Final FTPS client (same core behavior as phase 3, with reusable helpers).
 
-## Tech Used
-- Language:
-- Tools/Libraries:
+The client currently connects to `127.0.0.1`, logs in with:
+- User: `usuario_prueba`
+- Password: `password123`
 
-## How to Run
+## Requirements
+
+- A C compiler (`gcc`).
+- OpenSSL development libraries (required for `main.c` and `phases/phase3.c`).
+- A local FTP/FTPS server listening on localhost (port `21`) and supporting passive mode (`PASV`).
+- For phase 1 only: a TFTP server on localhost (port `69`) serving `prueba.txt`.
+- Recommended: Docker, to run the FTP/FTPS (and optionally TFTP) server in a reproducible environment.
+- Recommended: Wireshark, to inspect and verify FTP/TFTP/FTPS traffic during testing.
+
+## Build and Run
+
+From the project root:
+
 ```bash
-# build
-<command>
-
-# run
-<command>
+make
+./main
 ```
 
-## How It Works (Simple)
+Or in one step:
 
-1. Step 1.
-2. Step 2.
-3. Step 3.
+```bash
+make run
+```
 
-## What I Learned
+Clean binary:
 
-- Thing 1.
-- Thing 2.
-- Thing 3.
+```bash
+make clean
+```
 
-## Next Improvements
+## Runtime Usage
 
-- Improvement 1.
-- Improvement 2.
+When the client is running, you can enter FTP commands interactively, for example:
+
+- `LIST`
+- `RETR filename.ext`
+- `STOR filename.ext`
+- `QUIT`
+
+Notes:
+- `NLST` and `PORT` are intentionally not supported in phases 2/3 and `main.c`.
+- Transfers use passive mode (`PASV`).
