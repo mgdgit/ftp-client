@@ -1,4 +1,4 @@
-# FTP Client (C)
+# FTP Client
 
 A C-based FTP client project that evolves in 3 phases and ends with an FTPS (FTP over TLS) implementation.
 
